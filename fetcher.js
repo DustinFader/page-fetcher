@@ -7,10 +7,14 @@ let { [0]:URL, [1]:filePath } = process.argv.splice(2);
 
 // request for url page
 request(URL, (error, responce, body) => {
-  if (error) console.log('error', error);
+  if (error) { // edge case 3
+    console.error(error);
+    return;
+  }
   // write into file to givin path
   fs.writeFile(filePath, body, err => {
-    if (err) {
+   
+    if (err) { // edge case 2
       console.error(err);
       return;
     }
