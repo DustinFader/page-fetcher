@@ -2,7 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 // node fetcher.js <website page> <file path>
-// example: node fetcher.js 'http://www.example.edu/' 'files/test.txt'
+// example: node fetcher.js 'http://www.example.edu/' 'test.txt'
 let { [0]:URL, [1]:filePath } = process.argv.splice(2);
 
 // request for url page
